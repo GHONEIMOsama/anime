@@ -7,8 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import ghoneim.eservices.animeProject.MainActivity;
 import ghoneim.eservices.animeProject.R;
+import ghoneim.eservices.animeProject.adapter.AnimeAdapter;
 
 
 /**
@@ -16,6 +20,7 @@ import ghoneim.eservices.animeProject.R;
  */
 public class ShowVerticalFragment extends Fragment {
 
+    private RecyclerView recyclerView;
 
     public ShowVerticalFragment() {
         // Required empty public constructor
@@ -29,7 +34,16 @@ public class ShowVerticalFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_grid, container, false);
+        View v = inflater.inflate(R.layout.fragment_show_vertical, container, false);
+        setupRecyclerView(v);
+        return v;
+    }
+
+    private void setupRecyclerView(View v) {
+        recyclerView = (RecyclerView) v.findViewById(R.id.vertical_recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
+        recyclerView.setAdapter(new AnimeAdapter());
     }
 
 }
