@@ -24,7 +24,8 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull AnimeViewHolder holder, int position) {
-        holder.getView().setText("Attack on Titans" + new Random(100).nextInt());
+        holder.getTextView().setText("Attack on Titans" + new Random(100).nextInt());
+        holder.getImageView().setImageResource(R.drawable.bg);
     }
 
     @Override
