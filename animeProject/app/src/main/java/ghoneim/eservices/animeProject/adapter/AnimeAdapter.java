@@ -7,13 +7,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 import ghoneim.eservices.animeProject.R;
 import ghoneim.eservices.animeProject.adapter.viewholder.AnimeViewHolder;
+import ghoneim.eservices.animeProject.model.Anime;
+
 
 public class AnimeAdapter extends RecyclerView.Adapter<AnimeViewHolder> {
 
+    private List<Anime> animeList;
+
+    public AnimeAdapter() {
+        animeList = new ArrayList<>();
+        animeList.addAll(DataGenerator.generateData());
+    }
 
     @NonNull
     @Override
@@ -24,12 +33,11 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull AnimeViewHolder holder, int position) {
-        holder.getTextView().setText("Attack on Titans" + new Random(100).nextInt());
-        holder.getImageView().setImageResource(R.drawable.bg);
+        holder.bind(animeList.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return 100;
+        return animeList.size();
     }
 }
