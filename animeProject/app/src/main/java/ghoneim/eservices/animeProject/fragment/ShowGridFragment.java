@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,7 +43,8 @@ public class ShowGridFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(v.getContext(), 2));
-        recyclerView.setAdapter(new AnimeAdapter());
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        recyclerView.setAdapter(new AnimeAdapter(fragmentManager));
     }
 
 }
