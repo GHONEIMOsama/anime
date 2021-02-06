@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="MissingClass">
+
+    <TextView
+        android:id="@+id/anime_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:shadowColor="@android:color/black"
+        android:shadowRadius="10"
+        tools:text="Attack on Titan"
+        android:textColor="@color/colorPrimary"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <ImageView
+        android:id="@+id/anime_image"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        tools:srcCompat="@drawable/bg"
+        android:scaleType="centerCrop"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
         android:gravity="center"
-        android:textSize="50dp"
-        android:text="ssssssssssssssss"/>
+        android:shadowColor="@android:color/black"
+        android:shadowRadius="10"
+        android:text="Description"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/anime_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="qslmdkqsmdjmsqldjlkqjqmldfkjdqlkfjqmlfkjdqiofjdsqlmf
+        jdlqksfmjdsmfjdsqmifjdslfjdmslqfkmjsdlmkfjsdimfjldsmqfjkldsjflmdskfj"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
