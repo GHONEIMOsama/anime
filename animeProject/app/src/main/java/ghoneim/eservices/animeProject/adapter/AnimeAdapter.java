@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -19,19 +19,19 @@ import ghoneim.eservices.animeProject.model.Anime;
 public class AnimeAdapter extends RecyclerView.Adapter<AnimeViewHolder> {
 
     private List<Anime> animeList;
-    private FragmentManager fragmentManager;
+    private FragmentActivity fragmentActivity;
 
-    public AnimeAdapter(FragmentManager fragmentManager) {
+    public AnimeAdapter(FragmentActivity fragmentActivity) {
         animeList = new ArrayList<>();
         animeList.addAll(DataGenerator.generateData());
-        this.fragmentManager = fragmentManager;
+        this.fragmentActivity = fragmentActivity;
     }
 
     @NonNull
     @Override
     public AnimeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycler_view, parent, false);
-        return new AnimeViewHolder(view, fragmentManager);
+        return new AnimeViewHolder(view, fragmentActivity);
     }
 
     @Override

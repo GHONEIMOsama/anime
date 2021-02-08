@@ -43,8 +43,7 @@ public class ShowGridFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(v.getContext(), 2));
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        recyclerView.setAdapter(new AnimeAdapter(fragmentManager));
+        recyclerView.setAdapter(new AnimeAdapter(requireActivity()));
     }
 
 }

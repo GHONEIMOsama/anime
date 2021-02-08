@@ -43,8 +43,9 @@ public class ShowVerticalFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(v.getContext()));
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        recyclerView.setAdapter(new AnimeAdapter(fragmentManager));
+
+        //FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        recyclerView.setAdapter(new AnimeAdapter(requireActivity()));
     }
 
 }
